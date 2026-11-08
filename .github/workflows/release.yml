@@ -1,0 +1,66 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: version
+        run: |
+          version=$(node -p "require('./package.json').version")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if ! latest=$(npm view opencode-links dist-tags.latest 2> error.log); then
+            grep -q E404 error.log || { cat error.log; exit 1; }
+            echo "::notice::opencode-links is not on npm yet. The first publish is manual."
+            exit 0
+          fi
+          if npm view "opencode-links@$version" version > /dev/null 2> error.log; then
+            head=$(npm view "opencode-links@$version" gitHead)
+            if [ -z "$head" ]; then
+              echo "::notice::opencode-links@$version has no gitHead, so its GitHub release is left to a maintainer."
+              exit 0
+            fi
+            printf 'target=%s\nrelease=true\n' "$head" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          grep -q E404 error.log || { cat error.log; exit 1; }
+          if [ "$(printf '%s\n%s\n' "$latest" "$version" | sort -V | tail -1)" != "$version" ]; then
+            echo "::error::$version is older than the published $latest. Bump the version instead."
+            exit 1
+          fi
+          printf 'target=%s\npublish=true\nrelease=true\n' "$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+      - if: steps.version.outputs.publish == 'true'
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.12
+      - if: steps.version.outputs.publish == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - if: steps.version.outputs.publish == 'true'
+        run: |
+          bun install --frozen-lockfile
+          bunx tsc --noEmit
+          bun test
+          npm publish
+      - if: steps.version.outputs.release == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+          TARGET: ${{ steps.version.outputs.target }}
+        run: |
+          gh release view "v$VERSION" > /dev/null 2>&1 ||
+            gh release create "v$VERSION" --target "$TARGET" --title "v$VERSION" --generate-notes

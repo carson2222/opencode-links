@@ -1,0 +1,57 @@
+{
+  "name": "opencode-links",
+  "version": "0.1.0",
+  "description": "The pull requests, Linear issues and local pages each OpenCode chat produced, in the sidebar and in OpenCode Desktop",
+  "type": "module",
+  "license": "MIT",
+  "author": "carson2222",
+  "homepage": "https://github.com/carson2222/opencode-links#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carson2222/opencode-links.git"
+  },
+  "bugs": "https://github.com/carson2222/opencode-links/issues",
+  "exports": {
+    "./tui": "./dist/tui.js",
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "github",
+    "pull-request",
+    "linear",
+    "sidebar"
+  ],
+  "engines": {
+    "opencode": ">=2.0.24"
+  },
+  "scripts": {
+    "build": "vite build && bun scripts/build-tui.ts",
+    "check": "tsc --noEmit",
+    "test": "bun test",
+    "prepack": "bun run build",
+    "screen": "chmod +x node_modules/node-pty/prebuilds/*/spawn-helper && node scripts/screen.mjs",
+    "smoke": "bun run build && node scripts/sidebar-smoke.mjs --package .",
+    "smoke:refresh": "bun run build && node scripts/refresh-smoke.mjs --package .",
+    "simulate": "bun scripts/simulate.ts",
+    "stats": "bun scripts/stats.ts"
+  },
+  "devDependencies": {
+    "@opencode/plugin": "2.2.0",
+    "@opentui/core": "0.7.0",
+    "@opentui/solid": "0.7.0",
+    "@types/bun": "latest",
+    "@xterm/headless": "^6.0.0",
+    "effect": "4.0.1",
+    "electron": "44.9.1",
+    "node-pty": "1.1.0",
+    "solid-js": "1.9.15",
+    "typescript": "^5.9.3",
+    "vite": "7.3.6",
+    "vite-plugin-solid": "2.11.10"
+  }
+}
