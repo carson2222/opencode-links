@@ -1,10 +1,20 @@
-# opencode-links
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
+    <img src="assets/banner-light.png" alt="opencode-links: every PR, Linear issue and local page your chat produced">
+  </picture>
+</p>
 
-The pull requests, Linear issues and local pages each OpenCode chat produced, one click away. Shown in the terminal sidebar and in OpenCode Desktop.
+<p>
+  <a href="https://www.npmjs.com/package/opencode-links"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/npm/opencode-links.svg?variant=outline&font=geist-mono&mode=dark"><img src="https://shieldcn.dev/npm/opencode-links.svg?variant=outline&font=geist-mono&mode=light" alt="npm"></picture></a>
+  <a href="https://github.com/carson2222/opencode-links/actions/workflows/ci.yml"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/ci/carson2222/opencode-links.svg?variant=outline&font=geist-mono&mode=dark"><img src="https://shieldcn.dev/github/ci/carson2222/opencode-links.svg?variant=outline&font=geist-mono&mode=light" alt="CI"></picture></a>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/OpenCode-2.0.24%2B.svg?variant=outline&font=geist-mono&logo=lu:Terminal&mode=dark"><img src="https://shieldcn.dev/badge/OpenCode-2.0.24%2B.svg?variant=outline&font=geist-mono&logo=lu:Terminal&mode=light" alt="OpenCode 2.0.24+"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/license-MIT.svg?variant=outline&font=geist-mono&logo=lu:Scale&mode=dark"><img src="https://shieldcn.dev/badge/license-MIT.svg?variant=outline&font=geist-mono&logo=lu:Scale&mode=light" alt="MIT license"></picture>
+</p>
 
 ![The sidebar of an OpenCode chat listing its Linear issues, pull requests and local pages](assets/sidebar.png)
 
-Each chat shows only its own links and its subagents'. Status is the color of the number: open, draft, merged or closed for PRs, and the workflow color for Linear issues. A local page whose server is down is dimmed.
+Shown in the terminal sidebar and in OpenCode Desktop. Each chat shows only its own links and its subagents'. Status is the color of the number: open, draft, merged or closed for PRs, and the workflow color for Linear issues. A local page whose server is down is dimmed.
 
 ## Install
 
