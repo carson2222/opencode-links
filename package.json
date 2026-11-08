@@ -1,6 +1,6 @@
 {
   "name": "opencode-links",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The pull requests, Linear issues and local pages each OpenCode chat produced, in the sidebar and in OpenCode Desktop",
   "type": "module",
   "license": "MIT",
