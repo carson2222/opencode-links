@@ -1,15 +1,15 @@
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-    <img src="assets/banner-light.png" alt="opencode-links: every PR, Linear issue and local page your chat produced">
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
+    <img src="assets/banner-dark.png" alt="opencode-links: every PR, Linear issue and local page your chat produced">
   </picture>
 </p>
 
 <p>
-  <a href="https://www.npmjs.com/package/opencode-links"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/npm/opencode-links.svg?variant=outline&font=geist-mono&mode=dark"><img src="https://shieldcn.dev/npm/opencode-links.svg?variant=outline&font=geist-mono&mode=light" alt="npm"></picture></a>
-  <a href="https://github.com/carson2222/opencode-links/actions/workflows/ci.yml"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/ci/carson2222/opencode-links.svg?variant=outline&font=geist-mono&mode=dark"><img src="https://shieldcn.dev/github/ci/carson2222/opencode-links.svg?variant=outline&font=geist-mono&mode=light" alt="CI"></picture></a>
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/OpenCode-2.0.24%2B.svg?variant=outline&font=geist-mono&logo=lu:Terminal&mode=dark"><img src="https://shieldcn.dev/badge/OpenCode-2.0.24%2B.svg?variant=outline&font=geist-mono&logo=lu:Terminal&mode=light" alt="OpenCode 2.0.24+"></picture>
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/license-MIT.svg?variant=outline&font=geist-mono&logo=lu:Scale&mode=dark"><img src="https://shieldcn.dev/badge/license-MIT.svg?variant=outline&font=geist-mono&logo=lu:Scale&mode=light" alt="MIT license"></picture>
+  <a href="https://www.npmjs.com/package/opencode-links"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/npm/opencode-links.svg?variant=outline&font=geist-mono&mode=dark"><source media="(prefers-color-scheme: light)" srcset="https://shieldcn.dev/npm/opencode-links.svg?variant=outline&font=geist-mono&mode=light"><img src="https://shieldcn.dev/npm/opencode-links.svg?variant=secondary&font=geist-mono&mode=dark" alt="npm"></picture></a>
+  <a href="https://github.com/carson2222/opencode-links/actions/workflows/ci.yml"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/ci/carson2222/opencode-links.svg?variant=outline&font=geist-mono&mode=dark"><source media="(prefers-color-scheme: light)" srcset="https://shieldcn.dev/github/ci/carson2222/opencode-links.svg?variant=outline&font=geist-mono&mode=light"><img src="https://shieldcn.dev/github/ci/carson2222/opencode-links.svg?variant=secondary&font=geist-mono&mode=dark" alt="CI"></picture></a>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/OpenCode-2.0.24%2B.svg?variant=outline&font=geist-mono&logo=lu:Terminal&mode=dark"><source media="(prefers-color-scheme: light)" srcset="https://shieldcn.dev/badge/OpenCode-2.0.24%2B.svg?variant=outline&font=geist-mono&logo=lu:Terminal&mode=light"><img src="https://shieldcn.dev/badge/OpenCode-2.0.24%2B.svg?variant=secondary&font=geist-mono&logo=lu:Terminal&mode=dark" alt="OpenCode 2.0.24+"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/license-MIT.svg?variant=outline&font=geist-mono&logo=lu:Scale&mode=dark"><source media="(prefers-color-scheme: light)" srcset="https://shieldcn.dev/badge/license-MIT.svg?variant=outline&font=geist-mono&logo=lu:Scale&mode=light"><img src="https://shieldcn.dev/badge/license-MIT.svg?variant=secondary&font=geist-mono&logo=lu:Scale&mode=dark" alt="MIT license"></picture>
 </p>
 
 ![The sidebar of an OpenCode chat listing its Linear issues, pull requests and local pages](assets/sidebar.png)
